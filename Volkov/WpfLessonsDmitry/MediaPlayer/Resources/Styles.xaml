@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Resources/Constants.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Resources/Templates.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+        <Style TargetType="{x:Type ButtonBase}" x:Key="ButtonBase">
+            <Setter Property="Height" Value="{DynamicResource DefaultButtonSize}"/>
+            <Setter Property="Width" Value="{DynamicResource DefaultButtonSize}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource DefaultButtonBorderBrushBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource DefaultButtonBackgroundBrush}"/>
+            <Setter Property="Margin" Value="{DynamicResource DefaultButtonMargin}"/>
+            <Setter Property="Template" Value="{StaticResource MediaButton}"/>
+            <Setter Property="Foreground" Value="{DynamicResource DefaultForegroundBrush}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+</ResourceDictionary>
