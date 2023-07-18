@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Bolotskikh/WpfLessonsMark/MediaPlayer/bin/Debug/MediaPlayer.exe
+/Bolotskikh/WpfLessonsMark/MediaPlayer/bin/Debug/MediaPlayer.pdb
+/Bolotskikh/WpfLessonsMark/MediaPlayer/bin/Debug/MediaPlayer.exe
+/Bolotskikh/WpfLessonsMark/MediaPlayer/bin/Debug/MediaPlayer.exe
+/Bolotskikh/WpfLessonsMark/MediaPlayer/bin/Debug/MediaPlayer.exe.config
+/Bolotskikh/WpfLessonsMark/MediaPlayer/bin/Debug/MediaPlayer.pdb
+/Bolotskikh/WpfLessonsMark/MediaPlayer/obj/Debug/MediaPlayer.Properties.Resources.resources
