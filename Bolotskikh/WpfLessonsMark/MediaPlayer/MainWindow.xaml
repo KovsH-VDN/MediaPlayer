@@ -7,22 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="{StaticResource BackgroundColorBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <Button x:Name="PlayButton" Grid.Column="0" Grid.Row="0" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}" IsEnabled="False"/>
-        <Button x:Name="ForwardButton" Grid.Column="1" Grid.Row="0" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}"/>
+        <StackPanel >
+            <Button x:Name="PlayButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}" IsEnabled="False"/>
+            <Button x:Name="ForwardButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}"/>
+            <Slider Width="100" Height="20"></Slider>
+            <Slider Style="{StaticResource TriangleSliderStyle}" Height="20" Width="100" Value="20" Maximum="100" Minimum="0"></Slider>
+        </StackPanel>
     </Grid>
 </Window>
