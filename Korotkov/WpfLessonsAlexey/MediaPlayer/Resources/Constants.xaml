@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Color x:Key="WindowBackgroundColor">#252525</Color>
+    <Color x:Key="DefaultForegroundColor">#EEE</Color>
+    <Color x:Key="DisabledForegroundColor">#8888</Color>
+    <Color x:Key="DefaultButtonBackgroundColor">#01FFFFFF</Color>
+    <Color x:Key="DefaultButtonBorderBrushColor">#64AAE6</Color>
+    <Color x:Key="IsMouseOverButtonColor">#A0C8E6</Color>
+    <Color x:Key="PressedButtonColor">#FFE67E28</Color>
+    <Color x:Key="DisabledButtonColor">#529F</Color>
+
+    <SolidColorBrush x:Key="DefaultButtonBorderBrush" Color="{DynamicResource DefaultButtonBorderBrushColor}"/>
+    <SolidColorBrush x:Key="DefaultButtonBackgroundBrush" Color="{DynamicResource DefaultButtonBackgroundColor}"/>
+
+    <sys:Double x:Key="DefaultButtonSize">45</sys:Double>
+    <Thickness x:Key="DefaultButtonMargin">1</Thickness>
+
+    <SolidColorBrush x:Key="DefaultForegroundBrush" Color="#EFEBEF"/>
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{DynamicResource DisabledForegroundColor}"/>
+
+    <SolidColorBrush x:Key="PressedButtonBrush" Color="{DynamicResource PressedButtonColor}"/>
+
+    <SolidColorBrush x:Key="SliderTraceFillBrush" Color="{DynamicResource SliderTraceFillGradient}"/>
+
+    <LinearGradientBrush x:Key="SliderTraceFillGradient">
+        <GradientStop Color="PeachPuff" Offset="0"/>
+        <GradientStop Color="AliceBlue" Offset="0.8"/>
+        <GradientStop Color="Pink" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <RadialGradientBrush x:Key="MouseOverGradientBrush">
+        <GradientStop Color="Gray" Offset="0"/>
+        <GradientStop Color="White" Offset="0.4"/>
+        <GradientStop Color="White" Offset="0.6"/>
+        <GradientStop Color="Gray" Offset="1"/>
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="ButtonPressedGradientBrush">
+        <GradientStop Color="#979899" Offset="0"/>
+        <GradientStop Color="Orange" Offset="0.4"/>
+        <GradientStop Color="{DynamicResource PressedButtonColor}" Offset="0.6"/>
+        <GradientStop Color="Gray" Offset="1"/>
+    </RadialGradientBrush>
+
+</ResourceDictionary>

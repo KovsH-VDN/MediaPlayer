@@ -6,64 +6,7 @@
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <ControlTemplate TargetType="{x:Type Button}" x:Key="circularButton">
-            <Border x:Name="buttonBorder"
-                    CornerRadius="60"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    Background="{TemplateBinding Background}" 
-                    Height="{TemplateBinding Height}"
-                    Width="{TemplateBinding Width}" >
-
-                <ContentControl Margin="{TemplateBinding Padding}" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Content="{TemplateBinding Content}" />
-            </Border>
-            <ControlTemplate.Triggers>
-                <Trigger Property="IsMouseOver" Value="False">
-                    <Setter Property="Background" Value="Gray"/>
-                    <Setter Property="BorderThickness" Value="2"/>
-                    <Setter Property="Border.BorderBrush" Value="Black"/>
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Gray"/>
-                    <Setter Property="BorderThickness" Value="5"/>
-                    <Setter Property="Border.BorderBrush">
-                        <Setter.Value>
-                            <RadialGradientBrush>
-                                <GradientStop Color="Gray" Offset="0"/>
-                                <GradientStop Color="White" Offset="0.4"/>
-                                <GradientStop Color="White" Offset="0.6"/>
-                                <GradientStop Color="Gray" Offset="1"/>
-                            </RadialGradientBrush>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#979899"/>
-                    <Setter Property="BorderThickness" Value="5" />
-                    <Setter Property="Border.BorderBrush">
-                        <Setter.Value >
-                            <RadialGradientBrush>
-                                <GradientStop Color="#979899" Offset="0"/>
-                                <GradientStop Color="Orange" Offset="0.4"/>
-                                <GradientStop Color="Orange" Offset="0.6"/>
-                                <GradientStop Color="Gray" Offset="1"/>
-                            </RadialGradientBrush>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Background" Value="#a9aaab"/>
-                    <Setter Property="BorderThickness" Value="2" />
-                    <Setter Property="Border.BorderBrush" Value="Gray"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
-    </Window.Resources>
-    <Grid>
+    <Grid Background="Gray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -74,27 +17,13 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="CadetBlue"  Height="60" Width="250">
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="3,0,0,0"/>
-                </Style>
-            </StackPanel.Resources>
-            <Button Width="40" Height="40" Template="{StaticResource circularButton}">
-                <Image Source="/rewind_button_icon.png" Margin="4,0,4,0" IsEnabled="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=IsEnabled}"/>
-            </Button>
-            <Button Width="50" Height="50" Template="{StaticResource circularButton}">
-                <Image Source="/previous_button_icon.png" Margin="0,0,5,0" IsEnabled="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=IsEnabled}"/>
-            </Button>
-            <Button Width="50" Height="50" Template="{StaticResource circularButton}">
-                <Image Source="/play_button_icon.png" Margin="5,0,0,0" IsEnabled="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=IsEnabled}"/>
-            </Button>
-            <Button Width="50" Height="50" Template="{StaticResource circularButton}">
-                <Image Source="/next_button_icon.png" Margin="5,0,0,0" IsEnabled="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=IsEnabled}"/>
-            </Button>
-            <Button Width="40" Height="40" Template="{StaticResource circularButton}" IsEnabled="False">
-                <Image Source="/stop_button_icon.png" Margin="4,0,4,0" IsEnabled="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1}, Path=IsEnabled}"/>
-            </Button>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGray"  Height="60" Width="250">
+            <Button Width="35" Height="35" Content="C"/>
+            <Button Content="C"/>
+            <Button Content="C"/>
+            <Button Content="C"/>
+            <Button Width="35" Height="35" Content="C" IsEnabled="False"/>
         </StackPanel>
+        <Slider Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
     </Grid>
 </Window>

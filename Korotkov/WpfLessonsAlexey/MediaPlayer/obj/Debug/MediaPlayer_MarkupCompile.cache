@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dvolkov\Work\WpfLessons\Korotkov\WpfLessonsAlexey\MediaPlayer\obj\Debug\
+C:\Users\AKorotkov\Project\WpfLessons\Korotkov\WpfLessonsAlexey\MediaPlayer\obj\Debug\
 MediaPlayer
 none
 false
 DEBUG;TRACE
-C:\Users\dvolkov\Work\WpfLessons\Korotkov\WpfLessonsAlexey\MediaPlayer\App.xaml
-11151548125
+C:\Users\AKorotkov\Project\WpfLessons\Korotkov\WpfLessonsAlexey\MediaPlayer\App.xaml
+4783661478
 
-5-2017746502
-13152784993
-MainWindow.xaml;
+51579654133
+13-38814620
+MainWindow.xaml;Resources\Constants.xaml;Resources\Styles.xaml;Resources\Templates.xaml;
 
 False
 
