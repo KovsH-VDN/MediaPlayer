@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Resources/Constants.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Resources/Templates.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource EnabledColorBrush}"/>
+        <Setter Property="BorderThickness" Value="{DynamicResource BaseBorderThickness}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{StaticResource RoundButtonTemplate}"/>
+    </Style>
+    <Style TargetType="{x:Type Slider}">
+        <Setter Property="IsMoveToPointEnabled" Value="True"/>
+        <Setter Property="Template" Value="{StaticResource SliderTemplate}"/>
+    </Style>
+    <Style TargetType="{x:Type Slider}" BasedOn="{StaticResource {x:Type Slider}}" x:Key="TriangleSliderStyle">
+        <Setter Property="Template" Value="{StaticResource TriangleSliderTemplate}"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="{DynamicResource EnabledColor}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource GradientSecondColor}" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
