@@ -2,27 +2,45 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <Color x:Key="WindowBackgroundColor">#252525</Color>
-    <Color x:Key="DefaultForegroundColor">#EEE</Color>
-    <Color x:Key="DisabledForegroundColor">#8888</Color>
-    <Color x:Key="DefaultButtonBackgroundColor">#01FFFFFF</Color>
-    <Color x:Key="DefaultButtonBorderBrushColor">#64AAE6</Color>
-    <Color x:Key="IsMouseOverButtonColor">#A0C8E6</Color>
-    <Color x:Key="PressedButtonColor">#FFE67E28</Color>
-    <Color x:Key="DisabledButtonColor">#529F</Color>
+    <Color x:Key="LAccentColor">#F6BF</Color>
+    <Color x:Key="NAccentColor">#F38F</Color>
+    <Color x:Key="HAccentColor">#F16F</Color>
     
-    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{DynamicResource WindowBackgroundColor}"/>
+    <Color x:Key="MainBackgroundColor">#FF1F1F1F</Color>
+    <Color x:Key="DarkPanelBackgroundColor">#FF2D2D30</Color>
+    <Color x:Key="NormalPanelBackgroundColor">#FF4D4D50</Color>
+    <Color x:Key="LightPanelBackgroundColor">#FF6D6D70</Color>
+    <Color x:Key="DisabledForegroundColor">#FFAFAFAF</Color>
+    <Color x:Key="MainForegroundColor">#FFEFEFEF</Color>
+    
+    
+    <SolidColorBrush x:Key="LAccentBrush" Color="{DynamicResource LAccentColor}"/>
+    <SolidColorBrush x:Key="NAccentBrush" Color="{DynamicResource NAccentColor}"/>
+    <SolidColorBrush x:Key="HAccentBrush" Color="{DynamicResource HAccentColor}"/>
 
-    <SolidColorBrush x:Key="DefaultForegroundBrush" Color="#EFEBEF"/>
+    <SolidColorBrush x:Key="MainBackgroundBrush" Color="{DynamicResource MainBackgroundColor}"/>
+    <SolidColorBrush x:Key="DarkPanelBackgroundBrush" Color="{DynamicResource DarkPanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="NormalPanelBackgroundBrush" Color="{DynamicResource NormalPanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="LightPanelBackgroundBrush" Color="{DynamicResource LightPanelBackgroundColor}"/>
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{DynamicResource DisabledForegroundColor}"/>
+    <SolidColorBrush x:Key="MainForegroundBrush" Color="{DynamicResource MainForegroundColor}"/>
+    <!--
+    <Color x:Key="LRedAccentColor">#FFFF0000</Color>
+    <Color x:Key="NRedAccentColor">#FFFF4444</Color>
+    <Color x:Key="HRedAccentColor">#FFFF8888</Color>
 
-    
-    <SolidColorBrush x:Key="DefaultButtonBackgroundBrush" Color="{DynamicResource DefaultButtonBackgroundColor}"/>
-    <SolidColorBrush x:Key="DefaultButtonBorderBrushBrush" Color="{DynamicResource DefaultButtonBorderBrushColor}"/>
+    <SolidColorBrush x:Key="LRedAccentBrush" Color="{DynamicResource LAccentColor}"/>
+    <SolidColorBrush x:Key="NRedAccentBrush" Color="{DynamicResource NAccentColor}"/>
+    <SolidColorBrush x:Key="HRedAccentBrush" Color="{DynamicResource HAccentColor}"/>
 
-    <SolidColorBrush x:Key="IsMouseOverButtonBrush" Color="{DynamicResource IsMouseOverButtonColor}"/>
-    <SolidColorBrush x:Key="PressedButtonBrush" Color="{DynamicResource PressedButtonColor}"/>
-    <SolidColorBrush x:Key="DisabledButtonBrush" Color="{DynamicResource DisabledButtonColor}"/>
+    <Color x:Key="LGreenAccentColor">#FF00FF00</Color>
+    <Color x:Key="NGreenAccentColor">#FF44FF44</Color>
+    <Color x:Key="HGreenAccentColor">#FF88FF88</Color>
+
+    <SolidColorBrush x:Key="LGreenAccentBrush" Color="{DynamicResource LAccentColor}"/>
+    <SolidColorBrush x:Key="NGreenAccentBrush" Color="{DynamicResource NAccentColor}"/>
+    <SolidColorBrush x:Key="HGreenAccentBrush" Color="{DynamicResource HAccentColor}"/>
+    -->
 
 
     <sys:Double x:Key="DefaultButtonSize">45</sys:Double>

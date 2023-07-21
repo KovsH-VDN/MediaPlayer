@@ -5,14 +5,17 @@
         <ResourceDictionary Source="pack://application:,,,/Resources/Templates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-        <Style TargetType="{x:Type ButtonBase}" x:Key="ButtonBase">
-            <Setter Property="Height" Value="{DynamicResource DefaultButtonSize}"/>
-            <Setter Property="Width" Value="{DynamicResource DefaultButtonSize}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource DefaultButtonBorderBrushBrush}"/>
-            <Setter Property="Background" Value="{DynamicResource DefaultButtonBackgroundBrush}"/>
-            <Setter Property="Margin" Value="{DynamicResource DefaultButtonMargin}"/>
-            <Setter Property="Template" Value="{StaticResource MediaButton}"/>
-            <Setter Property="Foreground" Value="{DynamicResource DefaultForegroundBrush}"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
+    <Style TargetType="{x:Type ButtonBase}" x:Key="ButtonBase">
+        <Setter Property="Height" Value="{DynamicResource DefaultButtonSize}"/>
+        <Setter Property="Width" Value="{DynamicResource DefaultButtonSize}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NAccentBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource DarkPanelBackgroundBrush}"/>
+        <Setter Property="Margin" Value="{DynamicResource DefaultButtonMargin}"/>
+        <Setter Property="Template" Value="{DynamicResource MediaButton}"/>
+        <Setter Property="Foreground" Value="{DynamicResource MainForegroundBrush}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="{x:Type Slider}" x:Key="BaseSliderStyle">
+        <Setter Property="Template" Value="{StaticResource SliderTemplate}"/>
+    </Style>
 </ResourceDictionary>

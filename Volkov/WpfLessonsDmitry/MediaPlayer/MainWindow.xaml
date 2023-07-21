@@ -4,16 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
-        mc:Ignorable="d" Background="{DynamicResource WindowBackgroundBrush}"
+        mc:Ignorable="d" Background="{DynamicResource MainBackgroundBrush}"
         Title="MainWindow" Height="450" Width="400">
-
+    
     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
         <Button Content="C" FontSize="20"/>
         <Button Content="C" FontSize="20" IsEnabled="False"/>
-        <Slider Minimum="0" Maximum="100" Value="23"
-                IsSelectionRangeEnabled="True" SelectionStart="20"  SelectionEnd="58"
-                AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="2" 
-                TickPlacement="TopLeft" TickFrequency="10" IsSnapToTickEnabled="True"
-                LargeChange="20" SmallChange="5"/>
+        <Slider Value="10" Minimum="0" Maximum="100"
+                IsSelectionRangeEnabled="True" SelectionStart="0"
+                SelectionEnd="{Binding RelativeSource={RelativeSource Self}, Path=Value}"/>
     </StackPanel>
 </Window>

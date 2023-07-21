@@ -12,6 +12,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}"/>
+            <Style TargetType="{x:Type Slider}" BasedOn="{StaticResource BaseSliderStyle}"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

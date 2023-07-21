@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Resources/Constants.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
+
     <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="MediaButton">
         <Grid>
             <Ellipse x:Name="ellipse" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}" Fill="{TemplateBinding Background}" SnapsToDevicePixels="true"/>
@@ -14,8 +14,8 @@
                 <Setter Property="Fill" TargetName="ellipse">
                     <Setter.Value>
                         <RadialGradientBrush Center="0.5 0.5">
-                            <GradientStop Color="Transparent" Offset="0.6"/>
-                            <GradientStop Color="{DynamicResource IsMouseOverButtonColor}" Offset="1"/>
+                            <GradientStop Color="{DynamicResource DarkPanelBackgroundColor}" Offset="0.6"/>
+                            <GradientStop Color="{DynamicResource LAccentColor}" Offset="1"/>
                         </RadialGradientBrush>
                     </Setter.Value>
                 </Setter>
@@ -24,16 +24,68 @@
                 <Setter Property="Fill" TargetName="ellipse">
                     <Setter.Value>
                         <RadialGradientBrush Center="0.5 0.5">
-                            <GradientStop Color="Transparent" Offset="0.6"/>
-                            <GradientStop Color="{DynamicResource PressedButtonColor}" Offset="1"/>
+                            <GradientStop Color="{DynamicResource DarkPanelBackgroundColor}" Offset="0.6"/>
+                            <GradientStop Color="{DynamicResource NAccentColor}" Offset="1"/>
                         </RadialGradientBrush>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="Control.BorderBrush" Value="{DynamicResource PressedButtonBrush}"/>
+                <Setter Property="Control.BorderBrush" Value="{DynamicResource HAccentBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Control.BorderBrush" Value="{DynamicResource DisabledButtonBrush}"/>
-                <Setter Property="Control.Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+                <Setter Property="Background" Value="{DynamicResource DarkPanelBackgroundBrush}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource NormalPanelBackgroundBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <ControlTemplate TargetType="{x:Type Thumb}" x:Key="SliderThumbTemplate">
+        <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+            <Ellipse Width="10" Height="10" x:Name="grip" Fill="{DynamicResource DisabledForegroundBrush}" Stretch="Fill" SnapsToDevicePixels="True" Stroke="{DynamicResource LightPanelBackgroundBrush}" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Fill" TargetName="grip" Value="{DynamicResource MainForegroundBrush}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{DynamicResource NAccentBrush}"/>
+            </Trigger>
+            <Trigger Property="IsDragging" Value="true">
+                <Setter Property="Fill" TargetName="grip" Value="{DynamicResource LAccentBrush}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{DynamicResource NAccentBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Fill" TargetName="grip" Value="{DynamicResource DarkPanelBackgroundBrush}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{DynamicResource NormalPanelBackgroundBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate TargetType="{x:Type Slider}" x:Key="SliderTemplate">
+        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="TrackBackground" BorderBrush="{DynamicResource NormalPanelBackgroundBrush}" BorderThickness="1" Background="{DynamicResource LightPanelBackgroundBrush}" Height="4.0" Margin="5,0" Grid.Row="1" VerticalAlignment="center">
+                    <Canvas Margin="-6,-1">
+                        <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource LAccentBrush}" Height="4.0" Visibility="Hidden"/>
+                    </Canvas>
+                </Border>
+                <Track x:Name="PART_Track" Grid.Row="1">
+                    <Track.Thumb>
+                        <Thumb x:Name="Thumb" Focusable="False" Height="18" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbTemplate}" VerticalAlignment="Center" Width="11"/>
+                    </Track.Thumb>
+                </Track>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelectionRangeEnabled" Value="true">
+                <Setter Property="Visibility" TargetName="PART_SelectionRange" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="TrackBackground" Property="BorderBrush" Value="{DynamicResource DarkPanelBackgroundBrush}"/>
+                <Setter TargetName="TrackBackground" Property="Background" Value="{DynamicResource NormalPanelBackgroundBrush}"/>
+                <Setter TargetName="PART_SelectionRange" Property="Fill" Value="{DynamicResource LightPanelBackgroundBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
