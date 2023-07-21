@@ -5,7 +5,7 @@
         <Setter Property="Width" Value="100"/>
         <Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
     </Style>
-    <DataTemplate>
+    <DataTemplate x:Key="template">
         <Viewbox>
             <Canvas Style="{StaticResource IconCanvas}">
                 
