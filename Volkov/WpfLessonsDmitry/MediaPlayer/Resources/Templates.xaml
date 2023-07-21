@@ -62,16 +62,14 @@
         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Border x:Name="TrackBackground" BorderBrush="{DynamicResource NormalPanelBackgroundBrush}" BorderThickness="1" Background="{DynamicResource LightPanelBackgroundBrush}" Height="4.0" Margin="5,0" Grid.Row="1" VerticalAlignment="center">
+                <Border x:Name="TrackBackground" BorderBrush="{DynamicResource NormalPanelBackgroundBrush}" BorderThickness="1" Background="{DynamicResource LightPanelBackgroundBrush}" Height="4.0" Margin="5,0" VerticalAlignment="center">
                     <Canvas Margin="-6,-1">
                         <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource LAccentBrush}" Height="4.0" Visibility="Hidden"/>
                     </Canvas>
                 </Border>
-                <Track x:Name="PART_Track" Grid.Row="1">
+                <Track x:Name="PART_Track">
                     <Track.Thumb>
                         <Thumb x:Name="Thumb" Focusable="False" Height="18" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbTemplate}" VerticalAlignment="Center" Width="11"/>
                     </Track.Thumb>
