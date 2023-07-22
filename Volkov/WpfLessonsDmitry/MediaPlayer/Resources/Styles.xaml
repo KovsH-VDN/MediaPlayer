@@ -18,4 +18,8 @@
     <Style TargetType="{x:Type Slider}" x:Key="BaseSliderStyle">
         <Setter Property="Template" Value="{StaticResource SliderTemplate}"/>
     </Style>
+    <Style TargetType="{x:Type GridSplitter}" x:Key="BaseGridSplitterStyle">
+        <Setter Property="Background" Value="{DynamicResource DarkPanelBackgroundBrush}"/>
+        <Setter Property="Template" Value="{StaticResource GridSplitterTemplate}"/>
+    </Style>
 </ResourceDictionary>
