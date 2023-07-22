@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2D4A015-9A22-4F1A-9C5A-031116B74AFB}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>MediaPlayer</RootNamespace>
-    <AssemblyName>MediaPlayer</AssemblyName>
+    <ProjectGuid>{442B7359-6BF7-4F2F-8C09-C32DAC45E406}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>SystemWindowsExtension</RootNamespace>
+    <AssemblyName>SystemWindowsExtension</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -51,40 +48,30 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Resources\Constants.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Icons.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Templates.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="MVVM\Commands\BaseCommand\BaseCommand.cs" />
+    <Compile Include="MVVM\Commands\BaseCommand\BaseDelegateCommand.cs" />
+    <Compile Include="MVVM\Commands\BaseCommand\BaseDelageteCommandStatics.cs" />
+    <Compile Include="MVVM\Commands\BaseCommand\BaseExtendedCommand.cs" />
+    <Compile Include="MVVM\Commands\DelegateCommand.cs" />
+    <Compile Include="MVVM\Commands\DelegateCommandWithParameter.cs" />
+    <Compile Include="MVVM\Commands\ExtendedCommandManager.cs" />
+    <Compile Include="MVVM\Commands\Interfases\IExtendedCommand.cs" />
+    <Compile Include="MVVM\Commands\Interfases\IExtendedCommandManager.cs" />
+    <Compile Include="MVVM\Converters\Base\BaseMarkupExtensionConverter.cs" />
+    <Compile Include="MVVM\Converters\BoolInverted.cs" />
+    <Compile Include="MVVM\Converters\BoolToDouble.cs" />
+    <Compile Include="MVVM\Converters\BoolToString.cs" />
+    <Compile Include="MVVM\Converters\BoolToVisivility.cs" />
+    <Compile Include="MVVM\Converters\DoubleValueChange.cs" />
+    <Compile Include="MVVM\Converters\EmptyString.cs" />
+    <Compile Include="MVVM\Converters\EnumDescription.cs" />
+    <Compile Include="MVVM\Converters\NullObjectToVisivility.cs" />
+    <Compile Include="MVVM\Converters\SolidBrushAlphaSetting.cs" />
+    <Compile Include="MVVM\Converters\SolidBrushToneSetting.cs" />
+    <Compile Include="MVVM\Converters\StringConcat.cs" />
+    <Compile Include="MVVM\Converters\StringToVisibility.cs" />
+    <Compile Include="MVVM\Converters\ThicknessToDouble.cs" />
+    <Compile Include="MVVM\BaseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,14 +94,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\BaseLibs\BaseWpfLibs\SystemWindowsExtension\SystemExtension.csproj">
-      <Project>{442b7359-6bf7-4f2f-8c09-c32dac45e406}</Project>
-      <Name>SystemExtension</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
