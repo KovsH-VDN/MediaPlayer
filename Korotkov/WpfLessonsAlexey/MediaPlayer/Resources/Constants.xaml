@@ -23,7 +23,7 @@
     <SolidColorBrush x:Key="PressedButtonBrush" Color="{DynamicResource PressedButtonColor}"/>
 
     <SolidColorBrush x:Key="SliderTraceFillBrush" Color="{DynamicResource SliderTraceFillGradient}"/>
-
+   
     <LinearGradientBrush x:Key="SliderTraceFillGradient">
         <GradientStop Color="PeachPuff" Offset="0"/>
         <GradientStop Color="AliceBlue" Offset="0.8"/>
@@ -43,5 +43,12 @@
         <GradientStop Color="{DynamicResource PressedButtonColor}" Offset="0.6"/>
         <GradientStop Color="Gray" Offset="1"/>
     </RadialGradientBrush>
+    
+    <!-- Для оформления иконок -->
+    <LinearGradientBrush x:Key="IconBlackGradient">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#7a337a" Offset="0.5"/>
+        <GradientStop Color="Black" Offset="1"/>
+    </LinearGradientBrush>
 
 </ResourceDictionary>

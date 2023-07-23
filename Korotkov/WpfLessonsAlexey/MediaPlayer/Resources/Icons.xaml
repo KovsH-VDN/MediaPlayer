@@ -1,0 +1,191 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Resources/Constants.xaml"/>
+
+    </ResourceDictionary.MergedDictionaries>
+    <!--Примитивы-->
+    <PathGeometry x:Key="Triangle" Figures="M 25,25 L 75,50 L 25,75 Z"/>
+    <RectangleGeometry x:Key="Rectangle" Rect="25,25,50,50"/>
+    <RectangleGeometry x:Key="RectDash" Rect="25,25,15,50"/>
+
+    <GeometryGroup x:Key="Check" FillRule="EvenOdd">
+        <PathGeometry Figures="M 25,25 L 75,50 L 25,75 Z"/>
+        <PathGeometry Figures="M 25,37 L 52,50 L 25,63 Z"/>
+    </GeometryGroup>
+
+
+    <Style TargetType="{x:Type Canvas}" x:Key="IconCanvas">
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    
+    <!--Иконки-->
+    <DataTemplate x:Key="IconNote">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}">
+                    <Path.Data>
+                        <CombinedGeometry GeometryCombineMode="Union">
+                            <CombinedGeometry.Geometry1>
+                                <GeometryGroup FillRule="Nonzero">
+                                    <PathGeometry Figures="M 50,10 L 50,75 L 53,75 L 53,18 L 50,10 Z"/>
+                                    <PathGeometry Figures="M 50,12 C 50,47 70,17 70,52"/>
+                                    <PathGeometry Figures="M 50,12 C 50,47 70,11 70,52"/>
+                                </GeometryGroup>
+                            </CombinedGeometry.Geometry1>
+                            <CombinedGeometry.Geometry2>
+                                <EllipseGeometry Center="40,73" RadiusX="13" RadiusY="10"/>
+                            </CombinedGeometry.Geometry2>
+                        </CombinedGeometry>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconPlay">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Triangle}"/>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconStop">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Rectangle}"/>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconPause">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource RectDash}"/>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource RectDash}">
+                    <Path.RenderTransform>
+                        <TranslateTransform X="35" Y="0"/>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconNextTrack">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Check}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.5" />
+                            <TranslateTransform X="10"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Check}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.5" />
+                            <TranslateTransform X="30"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource RectDash}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.6" />
+                            <TranslateTransform X="53"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas> 
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconPreviousTrack">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Check}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180" CenterX="50" CenterY="50" />
+                            <ScaleTransform ScaleX="0.5" />
+                            <TranslateTransform X="17"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Check}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180" CenterX="50" CenterY="50" />
+                            <ScaleTransform ScaleX="0.5" />
+                            <TranslateTransform X="37"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource RectDash}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.6" />
+                            <TranslateTransform X="5"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconVolume">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Triangle}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180" CenterX="50" CenterY="50" />
+                            <ScaleTransform ScaleX="0.6" />
+                            <TranslateTransform X="5"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource Rectangle}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180" CenterX="50" CenterY="50" />
+                            <ScaleTransform ScaleX="0.4" ScaleY="0.5"/>
+                            <TranslateTransform X="5" Y="25"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource RectDash}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.5" ScaleY="0.4" />
+                            <TranslateTransform X="40" Y="30"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="{StaticResource RectDash}">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.5" ScaleY="0.6" />
+                            <TranslateTransform X="50" Y="20"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IconReplayDefault">
+        <Viewbox>
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Fill="{DynamicResource IconBlackGradient}" Data="M 25,25 A 20,20 1 1,1 75,75 A 20,20 1 1,1 25,25 Z"/>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+    
+</ResourceDictionary>
