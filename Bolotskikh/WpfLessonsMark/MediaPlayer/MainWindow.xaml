@@ -32,8 +32,40 @@
                 <Slider Style="{StaticResource TriangleSliderStyle}" Height="20" Width="100" Value="20" Maximum="100" Minimum="0"></Slider>
             </StackPanel>
             <GridSplitter Grid.Column="1" Grid.RowSpan="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="10">
-
             </GridSplitter>
+            <Button x:Name="IconButton" 
+                    Grid.Row="2"
+                    IsEnabled="False"
+                    Height="{StaticResource ButtonSize}" 
+                    Width="{StaticResource ButtonSize}">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <Viewbox>
+                            <Canvas Width="{StaticResource CanvasSize}" Height="{StaticResource CanvasSize}">
+                                <Path Stroke="{DynamicResource EnabledColorBrush}" StrokeThickness="1">
+                                    <Path.Data>
+                                        <CombinedGeometry GeometryCombineMode="Union">
+                                            <CombinedGeometry.Geometry1>
+                                                <CombinedGeometry GeometryCombineMode="Union">
+                                                    <CombinedGeometry.Geometry1>
+                                                        <RectangleGeometry Rect="40,20,20,5"/>
+                                                    </CombinedGeometry.Geometry1>
+                                                    <CombinedGeometry.Geometry2>
+                                                        <RectangleGeometry Rect="35,30,30,5"/>
+                                                    </CombinedGeometry.Geometry2>
+                                                </CombinedGeometry>
+                                            </CombinedGeometry.Geometry1>
+                                            <CombinedGeometry.Geometry2>
+                                                <RectangleGeometry Rect="30,40,40,30"/>
+                                            </CombinedGeometry.Geometry2>
+                                        </CombinedGeometry>
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Viewbox>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
         </Grid>
     </Grid>
 </Window>
