@@ -29,5 +29,10 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <Style TargetType="{x:Type GridSplitter}">
+        <Setter Property="Background" Value="{DynamicResource DisabledColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource DisabledColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Template" Value="{StaticResource GridSplitterTemplate}"/>
+    </Style>
 </ResourceDictionary>

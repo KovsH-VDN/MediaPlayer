@@ -7,14 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="{StaticResource BackgroundColorBrush}">
-        <StackPanel >
-            <Button x:Name="PlayButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}" IsEnabled="False"/>
-            <Button x:Name="ForwardButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}"/>
-            <Slider Width="100" 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <Button x:Name="PlayButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}" IsEnabled="False"/>
+                <Button x:Name="ForwardButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}"/>
+                <Slider Width="100" 
                     Height="20" 
                     IsSelectionRangeEnabled="True"
                     SelectionEnd="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Value}"/>
-            <Slider Style="{StaticResource TriangleSliderStyle}" Height="20" Width="100" Value="20" Maximum="100" Minimum="0"></Slider>
-        </StackPanel>
+                <Slider Style="{StaticResource TriangleSliderStyle}" Height="20" Width="100" Value="20" Maximum="100" Minimum="0"></Slider>
+            </StackPanel>
+            <GridSplitter Grid.Column="1" Grid.RowSpan="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="10">
+
+            </GridSplitter>
+        </Grid>
     </Grid>
 </Window>
