@@ -10,7 +10,10 @@
         <StackPanel >
             <Button x:Name="PlayButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}" IsEnabled="False"/>
             <Button x:Name="ForwardButton" Height="{StaticResource ButtonSize}" Width="{StaticResource ButtonSize}"/>
-            <Slider Width="100" Height="20"></Slider>
+            <Slider Width="100" 
+                    Height="20" 
+                    IsSelectionRangeEnabled="True"
+                    SelectionEnd="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Value}"/>
             <Slider Style="{StaticResource TriangleSliderStyle}" Height="20" Width="100" Value="20" Maximum="100" Minimum="0"></Slider>
         </StackPanel>
     </Grid>
