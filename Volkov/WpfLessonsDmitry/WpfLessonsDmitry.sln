@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "MediaPlayer\MediaPlayer.csproj", "{C2D4A015-9A22-4F1A-9C5A-031116B74AFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork", "ClassWork\ClassWork.csproj", "{AC3E8089-F4F1-42DF-B6AA-D07C356DEFFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemExtension", "..\..\BaseLibs\BaseWpfLibs\SystemWindowsExtension\SystemExtension.csproj", "{442B7359-6BF7-4F2F-8C09-C32DAC45E406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C2D4A015-9A22-4F1A-9C5A-031116B74AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2D4A015-9A22-4F1A-9C5A-031116B74AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2D4A015-9A22-4F1A-9C5A-031116B74AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3E8089-F4F1-42DF-B6AA-D07C356DEFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3E8089-F4F1-42DF-B6AA-D07C356DEFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3E8089-F4F1-42DF-B6AA-D07C356DEFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3E8089-F4F1-42DF-B6AA-D07C356DEFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
