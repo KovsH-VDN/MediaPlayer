@@ -25,5 +25,16 @@
             <Button Width="35" Height="35" Content="C" IsEnabled="False"/>
         </StackPanel>
         <Slider Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconNote}"/>
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconPlay}"/>
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconStop}"/>
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconPause}"/>
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconNextTrack}"/>
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconVolume}"/>
+            <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconReplayDefault}"/>
+        </StackPanel>
+        
+
     </Grid>
 </Window>
