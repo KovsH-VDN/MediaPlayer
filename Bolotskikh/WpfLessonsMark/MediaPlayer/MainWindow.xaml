@@ -35,36 +35,20 @@
             </GridSplitter>
             <Button x:Name="IconButton" 
                     Grid.Row="2"
-                    IsEnabled="False"
                     Height="{StaticResource ButtonSize}" 
                     Width="{StaticResource ButtonSize}">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <Viewbox>
-                            <Canvas Width="{StaticResource CanvasSize}" Height="{StaticResource CanvasSize}">
-                                <Path Stroke="{DynamicResource EnabledColorBrush}" StrokeThickness="1">
-                                    <Path.Data>
-                                        <CombinedGeometry GeometryCombineMode="Union">
-                                            <CombinedGeometry.Geometry1>
-                                                <CombinedGeometry GeometryCombineMode="Union">
-                                                    <CombinedGeometry.Geometry1>
-                                                        <RectangleGeometry Rect="40,20,20,5"/>
-                                                    </CombinedGeometry.Geometry1>
-                                                    <CombinedGeometry.Geometry2>
-                                                        <RectangleGeometry Rect="35,30,30,5"/>
-                                                    </CombinedGeometry.Geometry2>
-                                                </CombinedGeometry>
-                                            </CombinedGeometry.Geometry1>
-                                            <CombinedGeometry.Geometry2>
-                                                <RectangleGeometry Rect="30,40,40,30"/>
-                                            </CombinedGeometry.Geometry2>
-                                        </CombinedGeometry>
-                                    </Path.Data>
-                                </Path>
+                            <Canvas>
+                                <Path Data="{StaticResource RepeatGeometry}"/>
+                                <Path Data="M 20,20 80,80"/>
+                                <Path Data="M 80,20 20,80"/>
                             </Canvas>
                         </Viewbox>
                     </DataTemplate>
                 </Button.ContentTemplate>
+
             </Button>
         </Grid>
     </Grid>
