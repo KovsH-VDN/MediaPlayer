@@ -23,8 +23,8 @@ namespace GeometryPainter.Controls
         }
         public InkCanvasExtension() : base()
         {
-            //BaseDynamicRenderer = new RectangleDynamicRenderer(DefaultDrawingAttributes);
-            BaseDynamicRenderer = new CircleDynamicRenderer(DefaultDrawingAttributes);
+            BaseDynamicRenderer = new RectangleDynamicRenderer(DefaultDrawingAttributes);
+            //BaseDynamicRenderer = new CircleDynamicRenderer(DefaultDrawingAttributes);
             //BaseDynamicRenderer = new LineDynamicRenderer(DefaultDrawingAttributes);
         }
 

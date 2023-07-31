@@ -5,9 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         xmlns:controls="clr-namespace:MediaPlayer.Controls"
+        xmlns:converters="clr-namespace:SystemExtension.MVVM.Converters;assembly=SystemWindowsExtension"
         mc:Ignorable="d" Background="{DynamicResource MainBackgroundBrush}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <controls:MediaElementExtension x:Name="media"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <controls:MediaElementExtended x:Name="media"/>
+        <Slider Grid.Row="1" Value="{Binding ElementName=media, Path=Position}"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Grid.Row="2" Content="Play"/>
+            <Button Grid.Row="2" Content="Pause" Command="{Binding ElementName=media, Path=PauseCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -89,7 +89,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\MediaElementExtension.cs" />
+    <Compile Include="Controls\MediaElementExtended.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -120,6 +120,9 @@
       <Project>{442b7359-6bf7-4f2f-8c09-c32dac45e406}</Project>
       <Name>SystemExtension</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,17 +29,17 @@
     <Color x:Key="NRedAccentColor">#FFFF4444</Color>
     <Color x:Key="HRedAccentColor">#FFFF8888</Color>
 
-    <SolidColorBrush x:Key="LRedAccentBrush" Color="{DynamicResource LAccentColor}"/>
-    <SolidColorBrush x:Key="NRedAccentBrush" Color="{DynamicResource NAccentColor}"/>
-    <SolidColorBrush x:Key="HRedAccentBrush" Color="{DynamicResource HAccentColor}"/>
+    <SolidColorBrush x:Key="LRedAccentBrush" Color="{DynamicResource LRedAccentColor}"/>
+    <SolidColorBrush x:Key="NRedAccentBrush" Color="{DynamicResource NRedAccentColor}"/>
+    <SolidColorBrush x:Key="HRedAccentBrush" Color="{DynamicResource HRedAccentColor}"/>
 
     <Color x:Key="LGreenAccentColor">#FF00FF00</Color>
     <Color x:Key="NGreenAccentColor">#FF44FF44</Color>
     <Color x:Key="HGreenAccentColor">#FF88FF88</Color>
 
-    <SolidColorBrush x:Key="LGreenAccentBrush" Color="{DynamicResource LAccentColor}"/>
-    <SolidColorBrush x:Key="NGreenAccentBrush" Color="{DynamicResource NAccentColor}"/>
-    <SolidColorBrush x:Key="HGreenAccentBrush" Color="{DynamicResource HAccentColor}"/>
+    <SolidColorBrush x:Key="LGreenAccentBrush" Color="{DynamicResource LGreenAccentColor}"/>
+    <SolidColorBrush x:Key="NGreenAccentBrush" Color="{DynamicResource NGreenAccentColor}"/>
+    <SolidColorBrush x:Key="HGreenAccentBrush" Color="{DynamicResource HGreenAccentColor}"/>
     -->
 
 
