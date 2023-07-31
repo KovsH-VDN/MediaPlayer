@@ -1,0 +1,70 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:GeometryPainter.Controls">
+    <Style TargetType="{x:Type local:Painter}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Painter}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel>
+                            <ToolBarTray DockPanel.Dock="Top" Orientation="Horizontal">
+                                <ToolBar>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="DeepPink" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Red" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Orange" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Yellow" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Lime" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Green" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Aqua" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Blue" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Violet" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="White" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Height="20" Margin="2" BorderThickness="3" BorderBrush="Black" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                </ToolBar>
+                                
+                            </ToolBarTray>
+                            
+                            <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical">
+                                <ToolBar>
+                                    <RadioButton Content="C" ToolTip="Окружность" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Content="R" ToolTip="Прямоугольник" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Content="L" ToolTip="линия" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                </ToolBar>
+                                <ToolBar>
+                                    <RadioButton Content="i" ToolTip="Перо" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Content="s" ToolTip="Выбор" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Content="es" ToolTip="Ластик штрихов" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                    <RadioButton Content="ep" ToolTip="Ластик точечный" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
+                                </ToolBar>
+                            </ToolBarTray>
+                            
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <local:InkCanvasExtension EditingMode="Ink">
+                                    <local:InkCanvasExtension.DefaultDrawingAttributes>
+                                        <DrawingAttributes FitToCurve="True" Color="Green" Width="10" Height="10"/>
+                                    </local:InkCanvasExtension.DefaultDrawingAttributes>
+                                </local:InkCanvasExtension>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:ColorSlider}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ColorSlider}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

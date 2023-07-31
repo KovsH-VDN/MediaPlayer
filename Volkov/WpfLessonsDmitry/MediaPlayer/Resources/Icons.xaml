@@ -2,14 +2,197 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type Canvas}" x:Key="IconCanvas">
         <Setter Property="Height" Value="100"/>
-        <Setter Property="Width" Value="100"/>
+        <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"/>
         <Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
     </Style>
-    <DataTemplate x:Key="template">
-        <Viewbox>
+    <Style TargetType="{x:Type Viewbox}" x:Key="IconViewbox">
+        <Setter Property="Margin" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Control}, AncestorLevel=1}, Path=Padding}"/>
+    </Style>
+
+    <PathGeometry x:Key="triangle" Figures="M 20,0 100,50 20,100 z"/>
+    <PathGeometry x:Key="angel" Figures="M 0,0 0,8 8,8"/>
+    <GeometryGroup x:Key="RepeatModeFigure">
+        <PathGeometry>
+            <PathGeometry.Figures>
+                <PathFigure StartPoint="50,10">
+                    <ArcSegment Point="90,50" Size="40,40" IsLargeArc="True"/>
+                </PathFigure>
+            </PathGeometry.Figures>
+        </PathGeometry>
+        <PathGeometry Figures="M 50,2 64,10 50,18 z"/>
+    </GeometryGroup>
+    
+    <DataTemplate x:Key="RepeatAll">
+        <Viewbox Style="{StaticResource IconViewbox}">
             <Canvas Style="{StaticResource IconCanvas}">
-                
+                <Path Data="{StaticResource RepeatModeFigure}" StrokeThickness="10" Stroke="{DynamicResource MainForegroundBrush}"/>
             </Canvas>
         </Viewbox>
     </DataTemplate>
+    <DataTemplate x:Key="RepeatSingle">
+        <Viewbox Style="{StaticResource IconViewbox}">
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Data="{StaticResource RepeatModeFigure}" StrokeThickness="10" Stroke="{DynamicResource MainForegroundBrush}"/>
+                <TextBlock Text="1" Canvas.Left="37" Canvas.Top="20" FontSize="45" FontWeight="Bold"/>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+    <DataTemplate x:Key="RepeatNone">
+        <Viewbox Style="{StaticResource IconViewbox}">
+            <Canvas Style="{StaticResource IconCanvas}">
+                <Path Data="{StaticResource RepeatModeFigure}" StrokeThickness="10" Stroke="{DynamicResource LightPanelBackgroundBrush}"/>
+                <Path Data="M 10,10 90,90" StrokeThickness="10" Stroke="{DynamicResource MainForegroundBrush}"/>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="RepeatRandom">
+        <Viewbox Style="{StaticResource IconViewbox}">
+            <Grid>
+                <Canvas Style="{StaticResource IconCanvas}" Width="19" Height="19">
+                    <Path Width="19" Height="19" StrokeThickness="2" Margin="0,2,0,0" Stroke="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Control}, AncestorLevel=1}, Path=Foreground}">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <PathGeometry Figures="M 4,17 C 4,12 15,9 15,4"/>
+                                <PathGeometry Figures="M 15,4 16,4 15,2 14,4 z"/>
+                                <PathGeometry Figures="M 4,4 C 4,12 15,9 15,17"/>
+                                <PathGeometry Figures="M 4,4 5,4 4,2 3,4 z"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Grid>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Switch">
+        <Viewbox Style="{StaticResource IconViewbox}">
+            <Canvas Style="{StaticResource IconCanvas}">
+                <StackPanel Orientation="Horizontal">
+                    <Path Data="{StaticResource triangle}" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}" VerticalAlignment="Center"/>
+                    <Path Data="{StaticResource triangle}" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}" VerticalAlignment="Center"/>
+                    <Rectangle Margin="1" Width="5" Height="16" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}"/>
+                </StackPanel>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+    <DataTemplate x:Key="Play">
+        <Path Data="{StaticResource triangle}" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0,0,0">
+            <Path.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </Path.LayoutTransform>
+        </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="Pause">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1,0,0,0">
+            <Rectangle Margin="1" Width="7" Height="24" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}"/>
+            <Rectangle Margin="1" Width="7" Height="24" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}"/>
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="Stop">
+        <Rectangle Width="15" Height="15" Fill="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}, AncestorLevel=1}, Path=BorderBrush}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Mute">
+        <Grid>
+            <Path>
+                <Path.Data>
+                    <GeometryGroup>
+                        <PathGeometry Figures="M 3,6 6,3 7,3 7,14 6,14 3,11 C -1,11 -1,6 3,6 z"/>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigure StartPoint="9,4">
+                                    <ArcSegment Point="9,13" Size="21,11" SweepDirection="Clockwise"/>
+                                </PathFigure>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigure StartPoint="11,2">
+                                    <ArcSegment Point="11,15" Size="17,13" SweepDirection="Clockwise"/>
+                                </PathFigure>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigure StartPoint="13,0">
+                                    <ArcSegment Point="13,17" Size="13,13" SweepDirection="Clockwise"/>
+                                </PathFigure>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Data="M 1,1 16,16" x:Name="off" StrokeThickness="3" Stroke="Red" Visibility="Collapsed"/>
+        </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}, Path=IsChecked}" Value="True">
+                <Setter TargetName="off" Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="FullScreen">
+        <Path>
+            <Path.Data>
+                <GeometryGroup>
+                    <PathGeometry Figures="M 0,8 0,0 8,0"/>
+                    <PathGeometry Figures="M 13,0 21,0 21,8"/>
+                    <PathGeometry Figures="M 21,13 21,21 13,21"/>
+                    <PathGeometry Figures="M 8,21 0,21 0,13"/>
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="NormalScreen">
+        <Path>
+            <Path.Data>
+                <GeometryGroup>
+                    <PathGeometry Figures="M 0,8 8,8 8,0"/>
+                    <PathGeometry Figures="M 15,0 15,8 23,8"/>
+                    <PathGeometry Figures="M 23,15 15,15 15,23"/>
+                    <PathGeometry Figures="M 8,23 8,15 0,15"/>
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Add">
+        <Border SnapsToDevicePixels="True">
+            <Path x:Name="plus" Data="M 0,4 4,4 4,0 9,0 9,4 13,4 13,9 9,9 9,13 4,13 4,9 0,9 z" Stroke="Green" StrokeThickness="1" Fill="#2D4"/>
+        </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UIElement}, AncestorLevel=1}, Path=IsEnabled}" Value="false">
+                <Setter Property="Fill" TargetName="plus" Value="LightGreen"/>
+                <Setter Property="Stroke" TargetName="plus" Value="Lime"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <DataTemplate x:Key="Remove">
+        <Border SnapsToDevicePixels="True">
+            <Grid>
+                <Path x:Name="plus" Data="M 0,4 13,4 13,9 0,9 z" Stroke="Red" StrokeThickness="1" Fill="#D42"/>
+                <Path Data="M 0,0 12,12" StrokeThickness="0"/>
+            </Grid>
+        </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UIElement}, AncestorLevel=1}, Path=IsEnabled}" Value="false">
+                <Setter Property="Fill" TargetName="plus" Value="LightCoral"/>
+                <Setter Property="Stroke" TargetName="plus" Value="Coral"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <DataTemplate x:Key="PlayList">
+        <Border x:Name="border" BorderThickness="1" Width="18" Height="21" BorderBrush="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}, Path=BorderBrush}">
+            <Border Margin="1,2" Height="10" BorderThickness="0,1" BorderBrush="{Binding ElementName=border, Path=BorderBrush}" VerticalAlignment="Top">
+                <Border Margin="0,2" Height="4" BorderThickness="0,1" BorderBrush="{Binding ElementName=border, Path=BorderBrush}" VerticalAlignment="Top"/>
+            </Border>
+        </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}, Path=IsChecked}" Value="false">
+                <Setter TargetName="border" Property="BorderBrush" Value="red"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    
 </ResourceDictionary>

@@ -43,6 +43,6 @@
     -->
 
 
-    <sys:Double x:Key="DefaultButtonSize">45</sys:Double>
+    <sys:Double x:Key="DefaultButtonSize">50</sys:Double>
     <Thickness x:Key="DefaultButtonMargin">1</Thickness>
 </ResourceDictionary>

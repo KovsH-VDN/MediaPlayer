@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork", "ClassWork\Clas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemExtension", "..\..\BaseLibs\BaseWpfLibs\SystemWindowsExtension\SystemExtension.csproj", "{442B7359-6BF7-4F2F-8C09-C32DAC45E406}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryPainter", "GeometryPainter\GeometryPainter.csproj", "{17982E7C-7810-4AA7-8E72-CC643F981680}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{442B7359-6BF7-4F2F-8C09-C32DAC45E406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17982E7C-7810-4AA7-8E72-CC643F981680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17982E7C-7810-4AA7-8E72-CC643F981680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17982E7C-7810-4AA7-8E72-CC643F981680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17982E7C-7810-4AA7-8E72-CC643F981680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

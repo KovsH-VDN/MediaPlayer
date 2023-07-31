@@ -69,11 +69,13 @@
                         <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource LAccentBrush}" Height="4.0" Visibility="Hidden"/>
                     </Canvas>
                 </Border>
-                <Track x:Name="PART_Track">
-                    <Track.Thumb>
-                        <Thumb x:Name="Thumb" Focusable="False" Height="18" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbTemplate}" VerticalAlignment="Center" Width="11"/>
-                    </Track.Thumb>
-                </Track>
+                <Border Height="18">
+                    <Track x:Name="PART_Track" VerticalAlignment="Center">
+                        <Track.Thumb>
+                            <Thumb x:Name="Thumb" Focusable="False" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbTemplate}" VerticalAlignment="Center" Visibility="Collapsed"/>
+                        </Track.Thumb>
+                    </Track>
+                </Border>
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
@@ -84,6 +86,9 @@
                 <Setter TargetName="TrackBackground" Property="BorderBrush" Value="{DynamicResource DarkPanelBackgroundBrush}"/>
                 <Setter TargetName="TrackBackground" Property="Background" Value="{DynamicResource NormalPanelBackgroundBrush}"/>
                 <Setter TargetName="PART_SelectionRange" Property="Fill" Value="{DynamicResource LightPanelBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Thumb" Property="Visibility" Value="Visible"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
