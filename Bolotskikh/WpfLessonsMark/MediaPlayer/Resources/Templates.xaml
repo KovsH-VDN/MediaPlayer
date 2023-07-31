@@ -46,73 +46,59 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate TargetType="Thumb" x:Key="ThumbEllipseTemplate">
+        <Ellipse x:Name="ThumbEllipse" 
+                 Height="10" Width="10" 
+                 Fill="{DynamicResource EnabledColorBrush}"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ThumbEllipse" Property="Fill" Value="{DynamicResource MouseOverColorBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="ThumbEllipse" Property="Fill" Value="{DynamicResource DisabledColorBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
     <ControlTemplate TargetType="{x:Type Slider}" x:Key="SliderTemplate">
-        <ControlTemplate.Resources>
-            <Style TargetType="{x:Type RepeatButton}">
-                <Setter Property="SnapsToDevicePixels" Value="true" />
-                <Setter Property="OverridesDefaultStyle" Value="true" />
-            </Style>
-            <Style x:Key="RepeatButtonBorderStyle" TargetType="{x:Type Border}">
-                <Setter Property="Height" Value="3"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-            <Style x:Key="SliderRepeatButton" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}" >
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="RepeatButton">
-                            <Border Style="{StaticResource RepeatButtonBorderStyle}" 
-                                                BorderBrush="{DynamicResource EnabledColorBrush}" 
-                                                Background="{DynamicResource EnabledColorBrush}"/>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="SliderRepeatButtonPassed" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="RepeatButton">
-                            <Border Style="{StaticResource RepeatButtonBorderStyle}"
-                                                Background="{DynamicResource DisabledColorBrush}"
-                                                BorderBrush="{DynamicResource DisabledColorBrush}"/>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="SliderThumb" TargetType="Thumb">
-                <Setter Property="SnapsToDevicePixels" Value="true" />
-                <Setter Property="OverridesDefaultStyle" Value="true" />
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Thumb">
-                            <Ellipse Height="10" Width="10" 
-                                                 Fill="{DynamicResource MouseOverColorBrush}"/>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        </ControlTemplate.Resources>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Track Grid.Row="1" x:Name="PART_Track">
-                <Track.DecreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource SliderRepeatButtonPassed}"
-                                              Command="Slider.DecreaseLarge" />
-                </Track.DecreaseRepeatButton>
-                <Track.Thumb>
-                    <Thumb Style="{StaticResource SliderThumb}"/>
-                </Track.Thumb>
-                <Track.IncreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource SliderRepeatButton}" 
-                                              Command="Slider.IncreaseLarge" />
-                </Track.IncreaseRepeatButton>
-            </Track>
-        </Grid>
+        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="TrackBackground" 
+                        BorderBrush="{DynamicResource EnabledColorBrush}" 
+                        BorderThickness="1" 
+                        Background="{DynamicResource MouseOverColorBrush}" 
+                        Height="3" 
+                        Margin="5,0" 
+                        VerticalAlignment="Center">
+                    <Canvas Margin="-6,-1">
+                        <Rectangle x:Name="PART_SelectionRange" 
+                                   Fill="{DynamicResource DisabledColorBrush}" 
+                                   Height="3"
+                                   Visibility="Hidden"/>
+                    </Canvas>
+                </Border>
+                <Track x:Name="PART_Track">
+                    <Track.Thumb>
+                        <Thumb x:Name="Thumb" 
+                               OverridesDefaultStyle="True" 
+                               Template="{StaticResource ThumbEllipseTemplate}" 
+                               VerticalAlignment="Center"/>
+                    </Track.Thumb>
+                </Track>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelectionRangeEnabled" Value="true">
+                <Setter Property="Visibility" TargetName="PART_SelectionRange" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="TrackBackground" Property="BorderBrush" Value="{DynamicResource DisabledColorBrush}"/>
+                <Setter TargetName="TrackBackground" Property="Background" Value="Transparent"/>
+                <Setter TargetName="PART_SelectionRange" Property="Fill" Value="{DynamicResource DisabledColorBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate TargetType="{x:Type Slider}" x:Key="TriangleSliderTemplate">
         <ControlTemplate.Resources>
@@ -148,17 +134,19 @@
                 <Track x:Name="PART_Track" Value="{TemplateBinding Value}">
                     <!--Рисуем ползунок-->
                     <Track.Thumb>
-                        <Thumb Width="1" Background="{TemplateBinding Background}">
+                        <Thumb x:Name="Thumb" Width="1" Background="{TemplateBinding Background}">
                             <Thumb.Template>
                                 <ControlTemplate TargetType="{x:Type Thumb}">
-                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding Background}" BorderThickness="0"/>
+                                    <Border Background="{TemplateBinding Background}" 
+                                            BorderBrush="{TemplateBinding Background}" 
+                                            BorderThickness="0"/>
                                 </ControlTemplate>
                             </Thumb.Template>
                         </Thumb>
                     </Track.Thumb>
                     <!--Скрываем элементы увеличения/уменьшения звука-->
                     <Track.DecreaseRepeatButton>
-                        <RepeatButton Background="{TemplateBinding Background}" Command="Slider.DecreaseLarge"/>
+                        <RepeatButton x:Name="PassedRepeatButton" Background="{TemplateBinding Background}" Command="Slider.DecreaseLarge"/>
                     </Track.DecreaseRepeatButton>
                     <Track.IncreaseRepeatButton>
                         <RepeatButton Background="Transparent" Command="Slider.IncreaseLarge"/>
@@ -166,11 +154,32 @@
                 </Track>
             </Grid>
             <!--Рисуем сам треугольник-->
-            <Path Data="{StaticResource Triangle}"
+            <Path x:Name="TrianglePath" Data="{StaticResource Triangle}"
                               Stretch="Fill"
                               Stroke="{DynamicResource EnabledColorBrush}"
                               StrokeThickness="1"/>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Thumb" Property="Background" Value="Transparent"/>
+                <Setter TargetName="Thumb" Property="BorderBrush" Value="Transparent"/>
+                <Setter TargetName="PassedRepeatButton" Property="Background" Value="Transparent"/>
+                <Setter TargetName="TrianglePath" Property="Stroke" Value="{DynamicResource DisabledColorBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate TargetType="{x:Type GridSplitter}" x:Key="GridSplitterTemplate">
+        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                Background="{TemplateBinding Background}"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MouseOverColorBrush}"/>
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource MouseOverColorBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 </ResourceDictionary>

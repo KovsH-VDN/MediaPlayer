@@ -15,4 +15,5 @@
     <SolidColorBrush x:Key="BackgroundColorBrush" Color="{DynamicResource BackgroundColor}"/>
     <sys:Double x:Key="ButtonSize">50</sys:Double>
 
+    <sys:Double x:Key="CanvasSize">100</sys:Double>
 </ResourceDictionary>
