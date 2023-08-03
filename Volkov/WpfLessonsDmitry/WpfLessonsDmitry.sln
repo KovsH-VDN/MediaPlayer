@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemExtension", "..\..\Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryPainter", "GeometryPainter\GeometryPainter.csproj", "{17982E7C-7810-4AA7-8E72-CC643F981680}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "Themes\Themes.csproj", "{46F0870F-4A78-4FA4-B649-46BB68CB9BB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{17982E7C-7810-4AA7-8E72-CC643F981680}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17982E7C-7810-4AA7-8E72-CC643F981680}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17982E7C-7810-4AA7-8E72-CC643F981680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46F0870F-4A78-4FA4-B649-46BB68CB9BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F0870F-4A78-4FA4-B649-46BB68CB9BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F0870F-4A78-4FA4-B649-46BB68CB9BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F0870F-4A78-4FA4-B649-46BB68CB9BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="LAccentColor">#FFFFFF88</Color>
+    <Color x:Key="NAccentColor">#FFFFFF44</Color>
+    <Color x:Key="HAccentColor">#FFFFE000</Color>
+
+    <SolidColorBrush x:Key="LAccentBrush" Color="{DynamicResource LAccentColor}"/>
+    <SolidColorBrush x:Key="NAccentBrush" Color="{DynamicResource NAccentColor}"/>
+    <SolidColorBrush x:Key="HAccentBrush" Color="{DynamicResource HAccentColor}"/>
+</ResourceDictionary>

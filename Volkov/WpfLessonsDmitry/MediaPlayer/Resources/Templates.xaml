@@ -72,7 +72,7 @@
                 <Border Height="18">
                     <Track x:Name="PART_Track" VerticalAlignment="Center">
                         <Track.Thumb>
-                            <Thumb x:Name="Thumb" Focusable="False" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbTemplate}" VerticalAlignment="Center" Visibility="Collapsed"/>
+                            <Thumb x:Name="Thumb" Focusable="False" OverridesDefaultStyle="True" Template="{DynamicResource SliderThumbTemplate}" VerticalAlignment="Center" Visibility="Collapsed"/>
                         </Track.Thumb>
                     </Track>
                 </Border>

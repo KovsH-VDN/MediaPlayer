@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="MainBackgroundColor">#FF1F1F1F</Color>
+    <Color x:Key="DarkPanelBackgroundColor">#FF2D2D30</Color>
+    <Color x:Key="NormalPanelBackgroundColor">#FF4D4D50</Color>
+    <Color x:Key="LightPanelBackgroundColor">#FF6D6D70</Color>
+    <Color x:Key="DisabledForegroundColor">#FFAFAFAF</Color>
+    <Color x:Key="MainForegroundColor">#FFEFEFEF</Color>
+
+    <SolidColorBrush x:Key="MainBackgroundBrush" Color="{DynamicResource MainBackgroundColor}"/>
+    <SolidColorBrush x:Key="DarkPanelBackgroundBrush" Color="{DynamicResource DarkPanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="NormalPanelBackgroundBrush" Color="{DynamicResource NormalPanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="LightPanelBackgroundBrush" Color="{DynamicResource LightPanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{DynamicResource DisabledForegroundColor}"/>
+    <SolidColorBrush x:Key="MainForegroundBrush" Color="{DynamicResource MainForegroundColor}"/>
+</ResourceDictionary>

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Themes;
 
 namespace MediaPlayer
 {
@@ -23,6 +13,49 @@ namespace MediaPlayer
         public MainWindow()
         {
             InitializeComponent();
+            InitializeThemeButtons();
+        }
+
+        private void InitializeThemeButtons()
+        {
+            CreateThemeButtons(ResourceManager.ThemeDatas, ThemeButton_Click);
+            CreateThemeButtons(ResourceManager.ContrastDatas, ContrastButton_Click);
+        }
+        private void CreateThemeButtons(IReadOnlyList<ResourceData> themeDatas, RoutedEventHandler click)
+        {
+            foreach (ResourceData data in themeDatas)
+            {
+                Button button = CreateThemeButton(data, click);
+                _ = stack.Children.Add(button);
+            }
+        }
+        private Button CreateThemeButton(ResourceData data, RoutedEventHandler click)
+        {
+            Button button = new Button
+            {
+                Background = data.MainBrush,
+                Content = data.Key
+            };
+
+            button.Click += click;
+            return button;
+        }
+
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button is null)
+                return;
+
+            Application.Current.SetTheme(button.Content.ToString());
+        }
+        private void ContrastButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button is null)
+                return;
+
+            Application.Current.SetContrast(button.Content.ToString());
         }
     }
 }

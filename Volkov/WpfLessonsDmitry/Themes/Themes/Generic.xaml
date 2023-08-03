@@ -1,0 +1,46 @@
+﻿<l:ResourceManager xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:l="clr-namespace:Themes">
+    <l:ResourceManager.MainResources>
+        
+    </l:ResourceManager.MainResources>
+    <l:ResourceManager.Themes>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Themes/Dark.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Dark" MainBrush="#FF1F1F1F"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Themes/Light.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Light" MainBrush="#FFEFEFEF"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+    </l:ResourceManager.Themes>
+    <l:ResourceManager.Contrasts>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Contrasts/Blue.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Blue" MainBrush="#F38F"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Contrasts/Red.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Red" MainBrush="#FF44"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Contrasts/Green.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Green" MainBrush="#FF44FF44"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Contrasts/Yellow.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Yellow" MainBrush="#FFFFFF44"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+        <l:ResourceDictionaryExtended Source="pack://application:,,,/Themes;component/Contrasts/Violet.xaml">
+            <l:ResourceDictionaryExtended.ThemeData>
+                <l:ResourceData Key="Violet" MainBrush="#FFFF88FF"/>
+            </l:ResourceDictionaryExtended.ThemeData>
+        </l:ResourceDictionaryExtended>
+    </l:ResourceManager.Contrasts>
+</l:ResourceManager>

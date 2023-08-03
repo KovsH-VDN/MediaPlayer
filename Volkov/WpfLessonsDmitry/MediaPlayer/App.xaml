@@ -10,7 +10,9 @@
                 <ResourceDictionary Source="pack://application:,,,/Resources/Templates.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Resources/Styles.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Resources/Icons.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Themes;component/Themes/Generic.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
 
             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}"/>
             <Style TargetType="{x:Type Slider}" BasedOn="{StaticResource BaseSliderStyle}"/>

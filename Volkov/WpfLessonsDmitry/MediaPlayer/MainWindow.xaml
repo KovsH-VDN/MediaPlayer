@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MediaPlayer"
         xmlns:controls="clr-namespace:MediaPlayer.Controls"
         xmlns:converters="clr-namespace:SystemExtension.MVVM.Converters;assembly=SystemWindowsExtension"
+        xmlns:theme="clr-namespace:Themes;assembly=Themes"
         mc:Ignorable="d" Background="{DynamicResource MainBackgroundBrush}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -14,11 +15,27 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <controls:MediaElementExtended x:Name="media"/>
-        <Slider Grid.Row="1" Value="{Binding ElementName=media, Path=Position}"/>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Grid.Row="2" Content="Play"/>
-            <Button Grid.Row="2" Content="Pause" Command="{Binding ElementName=media, Path=PauseCommand}"/>
+        <Slider Grid.Row="1" SelectionStart="0" IsSelectionRangeEnabled="True" SelectionEnd="{Binding RelativeSource={RelativeSource Self}, Path=Value}" Value="{Binding ElementName=media, Path=Position}"/>
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <TextBlock Padding="5" FontWeight="Bold" Text="LAccentBrush" Background="{DynamicResource LAccentBrush}"/>
+            <TextBlock Padding="5" FontWeight="Bold" Text="NAccentBrush" Background="{DynamicResource NAccentBrush}"/>
+            <TextBlock Padding="5" FontWeight="Bold" Text="HAccentBrush" Background="{DynamicResource HAccentBrush}"/>
+
+            <TextBlock Padding="5" FontWeight="Bold" Foreground="{DynamicResource MainForegroundBrush}" Text="MainBackgroundBrush" Background="{DynamicResource MainBackgroundBrush}"/>
+            <TextBlock theme:ResourceManagerHelper.SetThemeKey="Light" Padding="5" FontWeight="Bold" Foreground="{DynamicResource MainForegroundBrush}" Text="DarkPanelBackgroundBrush" Background="{DynamicResource DarkPanelBackgroundBrush}"/>
+            <TextBlock Padding="5" FontWeight="Bold" Foreground="{DynamicResource MainForegroundBrush}" Text="NormalPanelBackgroundBrush" Background="{DynamicResource NormalPanelBackgroundBrush}"/>
+            <TextBlock Padding="5" FontWeight="Bold" Foreground="{DynamicResource MainBackgroundBrush}" Text="LightPanelBackgroundBrush" Background="{DynamicResource LightPanelBackgroundBrush}"/>
+            <TextBlock theme:ResourceManagerHelper.SetThemeKey="Light" Padding="5" FontWeight="Bold" Foreground="{DynamicResource MainBackgroundBrush}" Text="DisabledForegroundBrush" Background="{DynamicResource DisabledForegroundBrush}"/>
+            <TextBlock Padding="5" FontWeight="Bold" Foreground="{DynamicResource MainBackgroundBrush}" Text="MainForegroundBrush" Background="{DynamicResource MainForegroundBrush}"/>
+
+            <ContentControl theme:ResourceManagerHelper.SetContrastKey="Green">
+                <Border BorderBrush="{DynamicResource NAccentBrush}" BorderThickness="5" Height="50">
+                    <ContentControl>
+                        <Border Background="{DynamicResource NAccentBrush}" Height="50"/>
+                    </ContentControl>
+                </Border>
+            </ContentControl>
         </StackPanel>
+        <StackPanel x:Name="stack" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal"/>
     </Grid>
 </Window>
