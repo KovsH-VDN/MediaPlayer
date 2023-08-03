@@ -50,5 +50,54 @@
         <GradientStop Color="#7a337a" Offset="0.5"/>
         <GradientStop Color="Black" Offset="1"/>
     </LinearGradientBrush>
+    
+    <!-- Наборы цветов для тем -->
+    <Color x:Key="LPinkSakuraAccentColor">#FF81CE</Color>
+    <Color x:Key="NPinkSakuraAccentColor">#FFA7DC</Color>
+    <Color x:Key="HPinkSakuraAccentColor">#FFCFEC</Color>
+
+    <SolidColorBrush x:Key="LPinkSakuraAccentBrush" Color="{DynamicResource LPinkSakuraAccentColor}"/>
+    <SolidColorBrush x:Key="NPinkSakuraAccentBrush" Color="{DynamicResource NPinkSakuraAccentColor}"/>
+    <SolidColorBrush x:Key="HPinkSakuraAccentBrush" Color="{DynamicResource HPinkSakuraAccentColor}"/>
+    
+    <Color x:Key="LPurpleMagicAccentColor">#58006C</Color>
+    <Color x:Key="NPurpleMagicAccentColor">#8F0FAD</Color>
+    <Color x:Key="HPurpleMagicAccentColor">#CB95D8</Color>
+
+    <SolidColorBrush x:Key="LPurpleMagicAccentBrush" Color="{DynamicResource LPurpleMagicAccentColor}"/>
+    <SolidColorBrush x:Key="NPurpleMagicAccentBrush" Color="{DynamicResource NPurpleMagicAccentColor}"/>
+    <SolidColorBrush x:Key="HPurpleMagicAccentBrush" Color="{DynamicResource HPurpleMagicAccentColor}"/>
+
+    <Color x:Key="LFreshGreenAccentColor">#05962c</Color>
+    <Color x:Key="NFreshGreenAccentColor">#32a852</Color>
+    <Color x:Key="HFreshGreenAccentColor">#82d197</Color>
+
+    <SolidColorBrush x:Key="LFreshGreenAccentBrush" Color="{DynamicResource LFreshGreenAccentColor}"/>
+    <SolidColorBrush x:Key="NFreshGreenAccentBrush" Color="{DynamicResource NFreshGreenAccentColor}"/>
+    <SolidColorBrush x:Key="HFreshGreenAccentBrush" Color="{DynamicResource HFreshGreenAccentColor}"/>
+    
+    <Color x:Key="LDeepBlueAccentColor">#000ED0</Color>
+    <Color x:Key="NDeepBlueAccentColor">#3B45CC</Color>
+    <Color x:Key="HDeepBlueAccentColor">#6E74D0</Color>
+
+    <SolidColorBrush x:Key="LDeepBlueAccentBrush" Color="{DynamicResource LDeepBlueAccentColor}"/>
+    <SolidColorBrush x:Key="NDeepBlueAccentBrush" Color="{DynamicResource NDeepBlueAccentColor}"/>
+    <SolidColorBrush x:Key="HDeepBlueAccentBrush" Color="{DynamicResource HDeepBlueAccentColor}"/>
+
+    <Color x:Key="LCrimsonRedAccentColor">#BA0909</Color>
+    <Color x:Key="NCrimsonRedAccentColor">#D23636</Color>
+    <Color x:Key="HCrimsonRedAccentColor">#E46060</Color>
+
+    <SolidColorBrush x:Key="LCrimsonRedAccentBrush" Color="{DynamicResource LCrimsonRedAccentColor}"/>
+    <SolidColorBrush x:Key="NCrimsonRedAccentBrush" Color="{DynamicResource NCrimsonRedAccentColor}"/>
+    <SolidColorBrush x:Key="HCrimsonRedAccentBrush" Color="{DynamicResource HCrimsonRedAccentColor}"/>
+
+    <Color x:Key="LClassicBlackAccentColor">#000000</Color>
+    <Color x:Key="NClassicBlackAccentColor">#363131</Color>
+    <Color x:Key="HClassicBlackAccentColor">#636363</Color>
+
+    <SolidColorBrush x:Key="LClassicBlackAccentBrush" Color="{DynamicResource LClassicBlackAccentColor}"/>
+    <SolidColorBrush x:Key="NClassicBlackAccentBrush" Color="{DynamicResource NClassicBlackAccentColor}"/>
+    <SolidColorBrush x:Key="HClassicBlackAccentBrush" Color="{DynamicResource HClassicBlackAccentColor}"/>
 
 </ResourceDictionary>
