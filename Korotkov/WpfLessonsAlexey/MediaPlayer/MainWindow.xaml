@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
+        xmlns:controls="clr-namespace:MediaPlayer.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="Gray">
@@ -19,9 +20,9 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGray"  Height="60" Width="250">
             <Button Width="35" Height="35" Content="C"/>
-            <Button Content="C"/>
-            <Button Content="C"/>
-            <Button Content="C"/>
+            <Button Content="Play" Command="{Binding ElementName=media, Path=PlayCommand}"/>
+            <Button Content="Pause" Command="{Binding ElementName=media, Path=PauseCommand}"/> <!--IsEnabled="{Binding ElementName=media, Path=IsPlay}"/> -->
+            <Button Content="Stop" Command="{Binding ElementName=media, Path=StopCommand}"/>
             <Button Width="35" Height="35" Content="C" IsEnabled="False"/>
         </StackPanel>
         <Slider Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
@@ -34,7 +35,6 @@
             <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconVolume}"/>
             <ContentPresenter Height="50" ContentTemplate="{DynamicResource IconReplayDefault}"/>
         </StackPanel>
-        
-
+        <controls:MediaElementExtended x:Name="media" LoadedBehavior="Manual" Source="FFXIV OST - Heartless.mp3"/>
     </Grid>
 </Window>
